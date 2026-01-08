@@ -250,12 +250,12 @@
                 padding: 0.5rem;
             }
 
-            #timer{
+            #timer {
                 display: flex;
                 justify-content: space-around;
             }
 
-            .time{
+            .time {
                 color: white;
                 text-align: center;
                 margin: 10px;
@@ -264,8 +264,8 @@
 
             }
 
-            .time:last-child{
-                border-right:none;
+            .time:last-child {
+                border-right: none;
             }
 
         }
@@ -342,18 +342,18 @@
                         onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">Sponsors</a>
                 </li>
                 <!-- Example for Join Us button (uncomment if needed) -->
-            <li class="nav-item">
-                <a class="nav-green days-one-regular nav-link fs-5 mx-3 gradientHorizontalButton text-white px-5 py-2" href="#">Join Us</a>
-            </li> 
+                <li class="nav-item">
+                    <a class="nav-green days-one-regular nav-link fs-5 mx-3 gradientHorizontalButton text-white px-5 py-2"
+                        href="https://discord.gg/4MuWh4zank">Join Us</a>
+                </li>
             </ul>
         </div>
     </nav>
 
 
-    <header class="masthead" style="background-image: url(&quot;assets/img/wp_dark.png&quot;);">
+    <header class="masthead" style="background-image: url('assets/img/wp_dark.png');">
         <div class="container">
             <div class="row justify-content-center align-items-center" style="height: 100vh;">
-                <!-- Adjust the following col classes as needed -->
                 <div class="col-lg-6 col-md-8 col-sm-12 text-center">
                     <div class="text-white"
                         style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
@@ -362,8 +362,8 @@
                         </h1>
                         <h3 class="days-one-regular greenText">February 7 - 8</h3>
 
-                        <h4>Deadline Extended!</h5>
-                        <h5>Register Before January 7th, 2026!</h5>
+                        <h4>Get Ready to Create!</h4>
+                        <h5>Event Starts In:</h5>
 
                         <div id="timer">
                             <div class="time">
@@ -384,56 +384,52 @@
                             </div>
                         </div>
 
-
                         <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                            var countDownDate = new Date("Jan 7, 2026 23:59:59").getTime();
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var eventStartDate = new Date("Feb 7, 2026 09:00:00").getTime();
 
-                            function updateTimer() {
-                                var now = new Date().getTime();
-                                var distance = Math.max(0, countDownDate - now);
+                                function updateTimer() {
+                                    var now = new Date().getTime();
+                                    var distance = Math.max(0, eventStartDate - now);
 
-                                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                                document.getElementById("days").textContent = days;
-                                document.getElementById("hours").textContent = hours;
-                                document.getElementById("minutes").textContent = minutes;
-                                document.getElementById("seconds").textContent = seconds;
-                            }
-                            updateTimer();
+                                    document.getElementById("days").textContent = days;
+                                    document.getElementById("hours").textContent = hours;
+                                    document.getElementById("minutes").textContent = minutes;
+                                    document.getElementById("seconds").textContent = seconds;
 
-                            setInterval(updateTimer, 1000);
-                        });
+                                    if (distance <= 0) {
+                                        document.querySelector("h5").textContent = "The event is live!";
+                                    }
+                                }
+                                updateTimer();
+                                setInterval(updateTimer, 1000);
+                            });
                         </script>
 
-
-                        
-                    <a href="https://forms.office.com/r/0w1mZgxjGY"
-                       target="_blank"
-                       class="btn btn-lg days-one-regular"
-                       style="background-color: #0de5a8; color: black; margin: 2vh 0; padding: 15px 30px; font-size: 20px; border-radius: 8px; text-decoration: none; display: inline-block;"
-                       onmouseover="this.style.backgroundColor='#18ffb3';"
-                       onmouseout="this.style.backgroundColor='#0de5a8';"
-                    >
-                       Apply Now
-                    </a>
-                        <!--<p class="azeret-mono" style="font-size: 14px;">
+                        <!-- <a href="https://forms.office.com/r/0w1mZgxjGY" target="_blank"
+                            class="btn btn-lg days-one-regular"
+                            style="background-color: #0de5a8; color: black; margin: 2vh 0; padding: 15px 30px; font-size: 20px; border-radius: 8px; text-decoration: none; display: inline-block;"
+                            onmouseover="this.style.backgroundColor='#18ffb3';"
+                            onmouseout="this.style.backgroundColor='#0de5a8';">
+                            Apply Now
+                        </a>
+                        <p class="azeret-mono" style="font-size: 14px;">
                             Thank you to everyone who made WinHacks 2026 a huge success! We hope to see you again next
                             year. Until then, check out:
                         </p>
-
                         <div style="display: flex; gap: 10px;">
                             <a href="https://photos.google.com/share/AF1QipMsv6r7xIVS_2v6QvGulP_YI6N9mgk6INj0AibowMCLx4w-viSct7-coTSHd8trRA?key=NjBUZ1J2S1VvV2llRlloY05Dd2NMVXF2cFRVczRR"
                                 target="_blank" class="btn-link btn-lg days-one-regular"
                                 style="background-color: #14c3a2; color: black; padding: 15px 15px; font-size: 15px; border-radius: 8px; text-decoration: none; display: inline-block; margin-right:10px; width: 110px;"
                                 onmouseover="this.style.backgroundColor='#0de5a8';"
-                               onmouseout="this.style.backgroundColor='#14c3a2';">
+                                onmouseout="this.style.backgroundColor='#14c3a2';">
                                 Photos
                             </a>
-
                             <a href="https://winhacks-2026.devpost.com/project-gallery" target="_blank"
                                 class="btn-link btn-lg days-one-regular"
                                 style="background-color: #14c3a2; color: black; padding: 15px 15px; font-size: 15px; border-radius: 8px; text-decoration: none; display: inline-block; width: 110px;"
@@ -441,15 +437,12 @@
                                 onmouseout="this.style.backgroundColor='#14c3a2';">
                                 Projects
                             </a>
-                        </div>-->
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
-
-
     </header>
-
 
     <section id="about" class="content-section text-center bg-black">
         <div class="row align-items-center" style="margin-right: 10%;margin-left: 10%;">
@@ -737,36 +730,36 @@
 
                     </div>
                 </div>-->
-            </div>
+                    </div>
 
-            <script>
-                var $id = function (id) {
-                    return document.getElementById(id)
-                };
+                    <script>
+                        var $id = function (id) {
+                            return document.getElementById(id)
+                        };
 
-                function select(id) {
-                    let b1 = $id('b1');
-                    let b2 = $id('b2');
-                    let day1 = $id('day1');
-                    let day2 = $id('day2');
-                    b1.classList.remove('selected');
-                    b2.classList.remove('selected');
-                    day1.classList.add('hidden');
-                    day2.classList.add('hidden');
-                    switch (id) {
-                        case 1:
-                            b1.classList.add('selected');
-                            day1.classList.remove('hidden');
-                            break;
-                        case 2:
-                            b2.classList.add('selected');
-                            day2.classList.remove('hidden');
-                            break;
-                    }
-                }
-            </script>
+                        function select(id) {
+                            let b1 = $id('b1');
+                            let b2 = $id('b2');
+                            let day1 = $id('day1');
+                            let day2 = $id('day2');
+                            b1.classList.remove('selected');
+                            b2.classList.remove('selected');
+                            day1.classList.add('hidden');
+                            day2.classList.add('hidden');
+                            switch (id) {
+                                case 1:
+                                    b1.classList.add('selected');
+                                    day1.classList.remove('hidden');
+                                    break;
+                                case 2:
+                                    b2.classList.add('selected');
+                                    day2.classList.remove('hidden');
+                                    break;
+                            }
+                        }
+                    </script>
 
-        </div>
+                </div>
     </section>
 
     <!--
@@ -869,12 +862,15 @@
     </section>
     <div data-aos="fade-up" id="sponsors" class="photo-gallery" style="padding-bottom: 60px;padding-top: 80px;">
         <div class="container">
-                    <div class="intro" style="max-width: 700px;">
-                        <h2 class="text-center">Interested in Becoming a Sponsor?</h2>
-                        <p class="text-center">If you or your company is interested in being prominently featured among the Future of Computer Science, contact us at&nbsp;<a href="mailto:partnerships@winhacks.ca">partnerships@winhacks.ca</a><br></p>
-                        <p class="text-center" style="margin-top: 16px;"><a class="btn btn-primary btn-lg btn-default" role="button" href="./2026.pdf">Learn More Here</a><br></p>
-                    </div>
-                </div>
+            <div class="intro" style="max-width: 700px;">
+                <h2 class="text-center">Interested in Becoming a Sponsor?</h2>
+                <p class="text-center">If you or your company is interested in being prominently featured among the
+                    Future of Computer Science, contact us at&nbsp;<a
+                        href="mailto:partnerships@winhacks.ca">partnerships@winhacks.ca</a><br></p>
+                <p class="text-center" style="margin-top: 16px;"><a class="btn btn-primary btn-lg btn-default"
+                        role="button" href="./2026.pdf">Learn More Here</a><br></p>
+            </div>
+        </div>
         <div class="container">
             <h2 class="text-center">Our Sponsors and Partners</h2>
             <div class="container">
@@ -902,7 +898,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-3 item text">
                         <h3 style="color: #0de5a8;">WinHacks 2026</h3>
-                        <p>Apply today for a chance to be a part of Windsor's major hackathon, and an experience to
+                        <p>Join us for a chance to be a part of Windsor's major hackathon, and an experience to
                             remember!<br></p>
                     </div>
                     <div class="col-sm-6 col-md-3 item">
